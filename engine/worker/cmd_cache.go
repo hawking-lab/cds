@@ -122,7 +122,7 @@ func cachePushCmd() func(cmd *cobra.Command, args []string) {
 			sdk.Exit("worker cache push > internal error (%s)", errMarshal)
 		}
 
-		fmt.Printf("Worker cache push in progress... (tag: %s)\n", args[0])
+		fmt.Printf("Worker cache push in progress... (tag: %s, files: %v)\n", args[0], files)
 		req, errRequest := http.NewRequest(
 			"POST",
 			fmt.Sprintf("http://127.0.0.1:%d/cache/push", port),
