@@ -129,7 +129,7 @@ func cachePushCmd() func(cmd *cobra.Command, args []string) {
 			bytes.NewReader(data),
 		)
 		if errRequest != nil {
-			sdk.Exit("worker cache push > cannot post worker cache push (Request): %s", errRequest)
+			sdk.Exit("cannot post worker cache push (Request): %s", errRequest)
 		}
 
 		client := http.DefaultClient
